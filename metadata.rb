@@ -10,5 +10,4 @@ recipe 'camunda-ci-jenkins::default', 'Installs/Configures the camunda-ci-jenkin
 
 supports 'ubuntu', '14.04'
 
-depends 'camunda-ci-base'
 depends 'jenkins'
