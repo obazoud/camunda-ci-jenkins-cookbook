@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - 'metadata.rb'
+
+Style/LineLength:
+  Max: 160

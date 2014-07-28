@@ -1,0 +1,8 @@
+{
+  "name": "camunda-ci-jenkins",
+  "description": "camunda-ci-jenkins-cookbook playground",
+
+  "run_list": [
+    "recipe[camunda-ci-jenkins::default]"
+  ]
+}

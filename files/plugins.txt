@@ -1,0 +1,10 @@
+next executions configuration
+
+
+-Xmx512m
+-XX:MaxPermSize=128m
+-Dfile.encoding=UTF-8
+-Dsun.jnu.encoding=UTF-8
+-Djavax.net.ssl.trustStore=/home/java/tomcat-tools/jenkins-home/m2/keystore.pks
+-Djavax.net.ssl.trustStorePassword=cam123
+

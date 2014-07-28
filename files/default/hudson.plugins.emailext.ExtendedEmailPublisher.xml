@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.emailext.ExtendedEmailPublisherDescriptor plugin="email-ext@2.38.1">
+  <adminAddress>address not configured yet &lt;nobody&gt;</adminAddress>
+  <useSsl>false</useSsl>
+  <defaultContentType>text/html</defaultContentType>
+  <defaultSubject>[JENKINS] $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!</defaultSubject>
+  <defaultBody>${JELLY_SCRIPT}</defaultBody>
+  <defaultPresendScript></defaultPresendScript>
+  <maxAttachmentSize>-1</maxAttachmentSize>
+  <recipientList>camundabpm@camunda.com</recipientList>
+  <defaultReplyTo></defaultReplyTo>
+  <excludedCommitters></excludedCommitters>
+  <overrideGlobalSettings>false</overrideGlobalSettings>
+  <listId>Build Notifications &lt;jenkins.camunda.com&gt;</listId>
+  <precedenceBulk>true</precedenceBulk>
+  <debugMode>false</debugMode>
+  <enableSecurity>true</enableSecurity>
+  <enableWatching>false</enableWatching>
+</hudson.plugins.emailext.ExtendedEmailPublisherDescriptor>

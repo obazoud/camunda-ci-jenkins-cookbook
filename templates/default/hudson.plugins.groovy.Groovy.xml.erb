@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.groovy.Groovy_-DescriptorImpl plugin="groovy@1.18">
+  <instanceCounter>
+    <value>0</value>
+  </instanceCounter>
+  <allowMacro>false</allowMacro>
+  <installations/>
+  <installations2>
+    <% @groovys.each do |groovy| %>
+    <hudson.plugins.groovy.GroovyInstallation>
+      <name><%= groovy[:name] %></name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.plugins.groovy.GroovyInstaller>
+              <id><%= groovy[:version] %></id>
+            </hudson.plugins.groovy.GroovyInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </hudson.plugins.groovy.GroovyInstallation>
+    <% end %>
+  </installations2>
+</hudson.plugins.groovy.Groovy_-DescriptorImpl>

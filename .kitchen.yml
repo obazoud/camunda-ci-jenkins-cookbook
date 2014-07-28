@@ -1,0 +1,37 @@
+---
+driver:
+  name: vagrant
+driver_config:
+  # see https://github.com/test-kitchen/test-kitchen/issues/440
+  require_chef_omnibus: true
+  chef_omnibus_url: https://www.getchef.com/chef/install.sh -d /tmp/vagrant-cache/vagrant_omnibus
+
+  use_vagrant_berkshelf_plugin: true
+  customize:
+    memory: 2048
+    cpus: 2
+  network:
+      # Allow access to the Jenkins webui which is useful when troubleshooting
+      - - forwarded_port
+        - guest: 8080
+          host: 8080
+          auto_correct: true
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[camunda-ci-jenkins::user]
+      - recipe[camunda-ci-base::default]
+      - recipe[camunda-ci-jenkins::default]
+    attributes:
+      {
+        docker: {
+          group_members: ['vagrant', 'jenkins']
+        }
+      }
