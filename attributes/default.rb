@@ -1,5 +1,4 @@
 default['camunda']['jenkins']['installation']['timeout'] = 240
-default['camunda']['jenkins']['version'] = '1.573'
 default['camunda']['jenkins']['home'] = '/var/lib/jenkins'
 default['camunda']['jenkins']['user'] = 'jenkins'
 
