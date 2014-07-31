@@ -57,8 +57,6 @@ default['camunda']['jenkins']['plugins'] = [
   { name: 'config-file-provider', version: '' },
   { name: 'rebuild', version: '' },
   { name: 'matrix-reloaded', version: '' }
-  # { name: 'build-timeout', version: '' },
-  # { name: 'build-failure-analyzer', version: '' }
 ]
 default['camunda']['jenkins']['config']['tools']['ant'] = [
   { name: 'ant-1.8-latest', version: '1.8.4' },
