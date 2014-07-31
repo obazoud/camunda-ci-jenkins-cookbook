@@ -1,0 +1,21 @@
+language: ruby
+cache: bundler
+bundler_args: "--without development"
+script: bundle exec rspec
+rvm:
+- 2.1.2
+gemfile:
+- Gemfile
+branches:
+  only:
+  - master
+notifications:
+  email:
+  - christian.lipphardt@camunda.com
+  hipchat:
+    rooms:
+      secure: MPTrmKQuJ/7+zQGTQc09W9B5wXZsYd9bR5YJsvb/i/5uIuYiU1nOq/LGIj/0qlumS9PrZPS3NHUUqr7LBuqKFqEU2TEUGHHo+gt+2c28cZe5n/gwdNFthUNGW8f/PGu0PmTMRLgw7jNcPyPTtRMQvhgD9iCGqBs0gSpHocWx20M=
+    template:
+    - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
+      (<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
+    format: html
