@@ -4,8 +4,8 @@
     -XX:MaxPermSize=128m
     -Dfile.encoding=UTF-8
     -Dsun.jnu.encoding=UTF-8
-    -Djavax.net.ssl.trustStore=/home/java/tomcat-tools/jenkins-home/m2/keystore.pks
-    -Djavax.net.ssl.trustStorePassword=cam123</globalMavenOpts>
+    -Djavax.net.ssl.trustStore=/home/jenkins/keystore.pks
+    -Djavax.net.ssl.trustStorePassword=123456</globalMavenOpts>
   <mavenValidationLevels class="linked-hash-map">
     <entry>
       <string>DEFAULT</string>

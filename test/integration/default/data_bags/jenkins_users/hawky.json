@@ -1,0 +1,8 @@
+{
+  "id": "hawky",
+  "login": "hawky",
+  "full_name": "hawky hawkster",
+  "password" : "foobar",
+  "email": "foo@bar.com",
+  "ssh_keys": []
+}

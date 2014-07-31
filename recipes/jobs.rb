@@ -16,7 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+seed_job_config = File.join(Chef::Config[:file_cache_path], 'seed-job-config.xml')
 
-jenkins_job 'seed_job' do
-
+cookbook_file seed_job_config do
+  source 'jobs/job_dsl_seed_jobs_config.xml'
 end
+
+jenkins_job 'job_dsl_seed_jobs' do
+  config seed_job_config
+end
+
+jenkins_command 'build job_dsl_seed_jobs -c'

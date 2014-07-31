@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.configfiles.maven.DefaultMavenSettingsProvider plugin="config-file-provider@2.7.4">
+  <configs>
+    <entry>
+      <string>org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig1334228981382</string>
+      <org.jenkinsci.lib.configprovider.model.Config>
+        <id>org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig1334228981382</id>
+        <name>PUBLIC-NEXUS-settings.xml</name>
+        <comment>Public Nexus mirror</comment>
+        <content>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+          &lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+          &lt;pluginGroups&gt;&lt;/pluginGroups&gt;
+
+          &lt;proxies&gt;&lt;/proxies&gt;
+
+          &lt;servers&gt;&lt;/servers&gt;
+
+          &lt;mirrors&gt;&lt;/mirrors&gt;
+
+          &lt;profiles&gt;
+            &lt;profile&gt;
+            &lt;id&gt;camunda-bpm&lt;/id&gt;
+              &lt;repositories&gt;
+                &lt;repository&gt;
+                  &lt;id&gt;camunda-bpm-nexus&lt;/id&gt;
+                  &lt;name&gt;camuda-bpm-nexus&lt;/name&gt;
+                  &lt;releases&gt;
+                    &lt;enabled&gt;true&lt;/enabled&gt;
+                  &lt;/releases&gt;
+                  &lt;snapshots&gt;
+                    &lt;enabled&gt;true&lt;/enabled&gt;
+                  &lt;/snapshots&gt;
+                  &lt;url&gt;https://app.camunda.com/nexus/content/groups/public&lt;/url&gt;
+                &lt;/repository&gt;
+              &lt;/repositories&gt;
+            &lt;/profile&gt;
+          &lt;/profiles&gt;
+          &lt;activeProfiles&gt;
+            &lt;activeProfile&gt;camunda-bpm&lt;/activeProfile&gt;
+          &lt;/activeProfiles&gt;
+
+          &lt;/settings&gt;
+        </content>
+      </org.jenkinsci.lib.configprovider.model.Config>
+    </entry>
+  </configs>
+</org.jenkinsci.plugins.configfiles.maven.DefaultMavenSettingsProvider>

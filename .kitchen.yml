@@ -2,7 +2,7 @@
 driver:
   name: vagrant
 driver_config:
-  # see https://github.com/test-kitchen/test-kitchen/issues/440
+  # allow vagrant-cachier to cache chef omnibus package, see https://github.com/test-kitchen/test-kitchen/issues/440
   require_chef_omnibus: true
   chef_omnibus_url: https://www.getchef.com/chef/install.sh -d /tmp/vagrant-cache/vagrant_omnibus
 
@@ -25,13 +25,20 @@ platforms:
 
 suites:
   - name: default
+    data_bags_path: 'test/integration/default/data_bags'
     run_list:
       - recipe[camunda-ci-jenkins::user]
-      - recipe[camunda-ci-base::default]
+      - recipe[camunda-ci-jenkins::default]
+    attributes: {}
+  - name: docker
+    data_bags_path: 'test/integration/default/data_bags'
+    run_list:
+      - recipe[docker::default]
+      - recipe[camunda-ci-jenkins::user]
       - recipe[camunda-ci-jenkins::default]
     attributes:
       {
         docker: {
-          group_members: ['vagrant', 'jenkins']
+          host: ['127.0.0.1:2375', 'unix:///var/run/docker.sock'],
         }
       }

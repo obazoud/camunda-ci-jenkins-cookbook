@@ -17,8 +17,6 @@
 # limitations under the License.
 #
 node['camunda']['jenkins']['plugins'].each do |plugin|
-  #log "pluginname: #{plugin[:name]}"
-
   jenkins_plugin plugin[:name] do
     version plugin[:version].empty? ? 'latest' : plugin[:version]
     notifies :restart, 'service[jenkins]', :delayed

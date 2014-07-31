@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 # chef
-describe file('/etc/httpd/conf/httpd.conf') do
-  its(:content) { should match /ServerName www.example.jp/ }
+describe file('/var/lib/jenkins/config.xml') do
+  its(:content) { should contain '' }
 end
 
 describe file('/etc/httpd/conf/httpd.conf') do

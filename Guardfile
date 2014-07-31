@@ -1,6 +1,8 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
+ignore %r{^.chef}
+
 guard :bundler do
   watch('Gemfile')
   # Uncomment next line if your Gemfile contains the `gemspec' command.
@@ -22,16 +24,6 @@ guard :foodcritic, cookbook_paths: ".", all_on_start: false,
   watch(%r{recipes/.+\.rb$})
   watch(%r{resources/.+\.rb$})
 end
-
-# guard :kitchen do
-#   watch(%r{test/.+})
-#   watch(%r{^recipes/(.+)\.rb$})
-#   watch(%r{^attributes/(.+)\.rb$})
-#   watch(%r{^files/(.+)})
-#   watch(%r{^templates/(.+)})
-#   watch(%r{^providers/(.+)\.rb})
-#   watch(%r{^resources/(.+)\.rb})
-# end
 
 guard :rubocop do
   watch(%r{.+\.rb$})

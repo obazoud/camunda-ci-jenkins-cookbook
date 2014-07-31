@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include_recipe 'chef-sugar::default'
 
 node.set['jenkins']['master']['version'] = node['camunda']['jenkins']['version']
 node.set['jenkins']['master']['home'] = node['camunda']['jenkins']['home']
@@ -28,8 +29,8 @@ if node['camunda']['jenkins']['plugins'].any?
   include_recipe 'camunda-ci-jenkins::plugins'
 end
 
+include_recipe 'camunda-ci-jenkins::_users'
+
 include_recipe 'camunda-ci-jenkins::config'
 
-if node['camunda']['jenkins']['security']['enabled'] && node['camunda']['jenkins']['security']['mode'] == 'password'
-  include_recipe 'camunda-ci-jenkins::credentials'
-end
+include_recipe 'camunda-ci-jenkins::jobs'

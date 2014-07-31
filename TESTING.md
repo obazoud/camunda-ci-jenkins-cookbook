@@ -37,3 +37,18 @@ To run ChefSpec for a specific recipe:
 ## Running Test Kitchen
 
 Test Kitchen test suites are defined in [.kitchen.yml](https://github.com/camunda-ci/camunda-ci-jenkins-cookbook/blob/master/.kitchen.yml). Running `kitchen test` will cause Test Kitchen to spin up each platform VM in turn, running the `camunda-ci-jenkins::default` recipe. If the Chef run completes successfully, corresponding tests in `test/integration` are executed. These must also pass.
+
+## Creating and working with encrypted data bags
+
+1. Execute `bundle install` to install knife-solo and knife-solo_data_bag gems.
+2. `openssl rand -base64 512 > test/integration/default/encrypted_data_bag_secret`.
+3. `knife solo data bag create certificates test --secret-file test/integration/default/encrypted_data_bag_secret --data-bags-path test/integration/default/data_bags`.
+4. `--secret-file test/integration/default/encrypted_data_bag_secret` and `--data-bags-path test/integration/default/data_bags` can be left out, when you specify the correct locations inside your [knife.rb][knife.rb] file.
+
+### Commands to use when working with encrypted data bags
+
+* Now you can create a data bag with an item like `knife solo data bag create <data_bag_name> <item_name>`. It will be created inside the specified `data_bags_path` directory.
+* You can edit your data bag like `knife solo data bag edit <data_bag_name> <item_name>`.
+* Show all data bags: `knife solo data bag list`
+* Show plain text content of data bags: `knife solo data bag show <data_bag_name>
+* Show the decrypted content of a data bag: `knife solo data bag show <data_bag_name> <item_name>`

@@ -47,7 +47,7 @@ Do NOT modify this file by hand.
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds>
-    <%= render '_partial.config.docker.plugin.erb', variables: { docker_config: @docker_config } %>
+    <%= render '_partial.config.docker.plugin.erb', variables: { docker_config: @docker_config, docker_images_configs: @docker_images_configs, docker_credentials: @docker_credentials } %>
   </clouds>
   <slaves/>
   <quietPeriod>5</quietPeriod>

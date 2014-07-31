@@ -2,28 +2,28 @@
 <com.nirima.jenkins.plugins.docker.DockerCloud plugin="docker-plugin@0.7">
   <name><%= docker_plugin_config.name %></name>
   <templates>
-    <% @docker_config.images.each do |image| %>
+    <% @docker_images_configs.each_value do |image| %>
     <com.nirima.jenkins.plugins.docker.DockerTemplate>
-      <image><%= image.image %></image>
-      <labelString><%= image.label %></labelString>
-      <credentialsId><%= image.credentialsId %></credentialsId>
-      <dockerCommand><%= image.dockerCommand %></dockerCommand>
-      <idleTerminationMinutes><%= image.idleTerminationMinutes %></idleTerminationMinutes>
-      <jvmOptions><%= image.jvmOptions %></jvmOptions>
-      <javaPath><%= image.javaPath %></javaPath>
-      <prefixStartSlaveCmd><%= image.prefixStartSlaveCmd %></prefixStartSlaveCmd>
-      <suffixStartSlaveCmd><%= image.suffixStartSlaveCmd %></suffixStartSlaveCmd>
-      <remoteFs><%= image.remoteFs %></remoteFs>
-      <hostname><%= image.hostname %></hostname>
-      <instanceCap><%= image.instanceCap %></instanceCap>
+      <image><%= image['image'] %></image>
+      <labelString><%= image['label'] %></labelString>
+      <credentialsId><%= image['credentialsId'] %></credentialsId>
+      <dockerCommand><%= image['dockerCommand'] %></dockerCommand>
+      <idleTerminationMinutes><%= image['idleTerminationMinutes'] %></idleTerminationMinutes>
+      <jvmOptions><%= image['jvmOptions'] %></jvmOptions>
+      <javaPath><%= image['javaPath'] %></javaPath>
+      <prefixStartSlaveCmd><%= image['prefixStartSlaveCmd'] %></prefixStartSlaveCmd>
+      <suffixStartSlaveCmd><%= image['suffixStartSlaveCmd'] %></suffixStartSlaveCmd>
+      <remoteFs><%= image['remoteFs'] %></remoteFs>
+      <hostname><%= image['hostname'] %></hostname>
+      <instanceCap><%= image['instanceCap'] %></instanceCap>
       <dnsHosts>
-        <% image.dnsHosts.each do |dnsHost| %>
+        <% image['dnsHosts'].each do |dnsHost| %>
         <string><%= dnsHost %></string>
         <% end %>
       </dnsHosts>
       <volumes/>
       <volumesFrom/>
-      <privileged><%= image.privileged %></privileged>
+      <privileged><%= image['privileged'] %></privileged>
     </com.nirima.jenkins.plugins.docker.DockerTemplate>
     <% end %>
   </templates>

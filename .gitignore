@@ -19,9 +19,15 @@ bin/*
 .kitchen/
 .kitchen.local.yml
 
+.chef/knife.local.rb
+
 # IDEs
 *.iml
 .idea
 
 # OS
 .DS_Store
+
+# Secure files and folders
+*.secure
+.secure/*

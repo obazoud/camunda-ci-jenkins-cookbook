@@ -14,6 +14,12 @@ describe 'camunda-ci-jenkins::plugins' do
 
       expect(chef_run).to include_recipe('camunda-ci-jenkins::plugins')
     end
+
+    it 'should install all listed plugins' do
+      chef_run.converge(described_recipe)
+
+      expect(chef_run).to include_recipe('camunda-ci-jenkins::plugins')
+    end
   end
 
 end

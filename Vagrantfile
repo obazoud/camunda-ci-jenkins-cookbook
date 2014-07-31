@@ -33,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if Vagrant.has_plugin?("vagrant-chef-zero")
     config.chef_zero.enabled = true
     config.chef_zero.chef_repo_path = "."
+    config.chef.encrypted_data_bag_secret_key_path = '~/hom/etc/chef/encrypted_data_bag_secret'
 
     config.vm.provision :chef_client do |chef|
       chef.run_list = [
