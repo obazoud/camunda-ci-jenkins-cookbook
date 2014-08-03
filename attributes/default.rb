@@ -56,7 +56,8 @@ default['camunda']['jenkins']['plugins'] = [
   { name: 'job-dsl', version: '' },
   { name: 'config-file-provider', version: '' },
   { name: 'rebuild', version: '' },
-  { name: 'matrix-reloaded', version: '' }
+  { name: 'matrix-reloaded', version: '' },
+  { name: 'greenballs', version: '' }
 ]
 default['camunda']['jenkins']['config']['tools']['ant'] = [
   { name: 'ant-1.8-latest', version: '1.8.4' },
