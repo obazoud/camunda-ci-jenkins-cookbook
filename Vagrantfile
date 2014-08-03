@@ -37,6 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.provision :chef_client do |chef|
       chef.run_list = [
+          "recipe[camunda-ci-base::default]",
           "recipe[camunda-ci-jenkins::default]"
       ]
     end
