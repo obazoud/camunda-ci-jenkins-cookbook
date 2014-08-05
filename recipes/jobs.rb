@@ -25,5 +25,3 @@ end
 jenkins_job 'job_dsl_seed_jobs' do
   config seed_job_config
 end
-
-jenkins_command 'build job_dsl_seed_jobs -c'
